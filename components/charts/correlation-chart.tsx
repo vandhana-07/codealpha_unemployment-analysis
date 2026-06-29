@@ -93,9 +93,9 @@ export function CorrelationChart({ theme }: { theme: AxisTheme }) {
         />
         {/* Region points */}
         <Scatter data={correlationData} name="Region">
-          {correlationData.map((d) => (
+          {correlationData.map((d, i) => (
             <Cell
-              key={d.region}
+              key={`${d.region}-${i}`}
               fill={d.unemployment > 15 ? "#f97316" : "#3b82f6"}
             />
           ))}
